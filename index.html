@@ -569,11 +569,96 @@
       </div>
     </article>
 
+    <!-- ── 05 — coral ── -->
+    <article class="card" style="
+      --c-accent:       #f4694a;
+      --c-tag-bg:       rgba(244,105,74,0.08);
+      --c-tag-border:   rgba(244,105,74,0.30);
+      --c-tag-text:     rgba(244,105,74,0.90);
+      --c-outcome-bg:   rgba(244,105,74,0.06);
+      --c-outcome-text: rgba(244,105,74,0.75);
+    ">
+      <div class="card-inner">
+        <div class="card-left">
+          <div class="card-meta">
+            <span class="card-index">05</span>
+            <span class="card-date">March 2026</span>
+          </div>
+          <h2><span class="name-first">Gmail &amp; Telegram</span><span class="name-rest"> Personal Agent</span></h2>
+          <p class="card-description">
+            A Trigger.dev automation project running two always-on pipelines. The email manager
+            polls Gmail every minute via the History API, uses Claude to classify each new email
+            into a custom label category, applies the label automatically, and sends a concise
+            "Alfred Pennyworth"-style Telegram notification. The Telegram agent lets Josh issue
+            natural language commands — Claude uses tool calling to search Gmail, reply to threads
+            verbatim, and create Google Calendar events.
+          </p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">Trigger.dev</span>
+            <span class="tag">Anthropic Claude API</span>
+            <span class="tag">Gmail API</span>
+            <span class="tag">Google Calendar API</span>
+            <span class="tag">Telegram Bot API</span>
+            <span class="tag">Tool Use</span>
+          </div>
+          <p class="outcome-label">Outcome</p>
+          <p class="outcome">
+            A 24/7 personal AI agent that auto-sorts every incoming email, surfaces concise
+            summaries on your phone, and lets you delegate email replies and calendar bookings
+            with a single Telegram message.
+          </p>
+        </div>
+        <div class="card-map">
+          <svg width="200" height="200" viewBox="-100 -100 200 200">
+            <defs>
+              <radialGradient id="glow05" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f4694a" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#f4694a" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="0" cy="0" r="95" fill="url(#glow05)"/>
+            <!-- 7 spokes -->
+            <g stroke="#f4694a" stroke-opacity="0.30" stroke-width="0.8" fill="none">
+              <line x1="0"    y1="-20"  x2="0"    y2="-55"/>
+              <line x1="18.1" y1="-8.7" x2="49.7" y2="-23.9"/>
+              <line x1="19.5" y1="8.2"  x2="53.5" y2="22.5"/>
+              <line x1="9.7"  y1="18.2" x2="26.6" y2="50"/>
+              <line x1="-9.7" y1="18.2" x2="-26.6" y2="50"/>
+              <line x1="-19.5" y1="8.2" x2="-53.5" y2="22.5"/>
+              <line x1="-18.1" y1="-8.7" x2="-49.7" y2="-23.9"/>
+            </g>
+            <g fill="rgba(244,105,74,0.15)" stroke="#f4694a" stroke-opacity="0.55" stroke-width="0.8">
+              <circle cx="0"    cy="-62"  r="6"/>
+              <circle cx="56"   cy="-27"  r="6"/>
+              <circle cx="60"   cy="25.5" r="6"/>
+              <circle cx="30"   cy="56"   r="6"/>
+              <circle cx="-30"  cy="56"   r="6"/>
+              <circle cx="-60"  cy="25.5" r="6"/>
+              <circle cx="-56"  cy="-27"  r="6"/>
+            </g>
+            <g font-family="'Courier New',monospace" font-size="7" fill="#f4694a" fill-opacity="0.70" text-anchor="middle">
+              <text x="0"    y="-73">TypeScript</text>
+              <text x="70"   y="-24">Trigger.dev</text>
+              <text x="74"   y="29">Claude API</text>
+              <text x="34"   y="70">Gmail API</text>
+              <text x="-34"  y="70">Cal. API</text>
+              <text x="-74"  y="29">Telegram</text>
+              <text x="-70"  y="-24">Tool Use</text>
+            </g>
+            <circle cx="0" cy="0" r="20" fill="rgba(244,105,74,0.20)" stroke="#f4694a" stroke-width="1.2"/>
+            <text x="0" y="4" font-family="Arial,sans-serif" font-size="9" font-weight="700"
+                  fill="#f0f0f0" text-anchor="middle">GTA</text>
+          </svg>
+        </div>
+      </div>
+    </article>
+
   </div>
 
   <footer>
     <span class="footer-note">Built with Claude Code</span>
-    <span class="footer-count">4 projects</span>
+    <span class="footer-count">5 projects</span>
   </footer>
 
 </div>
