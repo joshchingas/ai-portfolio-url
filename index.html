@@ -7,69 +7,63 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --bg: #0d0d0d;
-      --surface: #161616;
-      --border: #2a2a2a;
-      --text: #e8e8e8;
-      --muted: #888;
-      --accent: #7c6bff;
-      --accent2: #3ecfcf;
-      --tag-bg: #1e1e1e;
-      --tag-border: #333;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
-      font-size: 15px;
+      background: #0f0f0f;
+      color: #e4e4e4;
+      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
       line-height: 1.6;
       min-height: 100vh;
     }
 
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Header ── */
     header {
-      padding: 72px 24px 56px;
-      text-align: center;
-      border-bottom: 1px solid var(--border);
+      padding: 64px 40px 48px;
+      max-width: 960px;
+      margin: 0 auto;
+      border-bottom: 1px solid #222;
     }
 
     header h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
       letter-spacing: -0.03em;
-      background: linear-gradient(135deg, #fff 0%, var(--accent2) 60%, var(--accent) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
+      color: #ffffff;
     }
 
     header p {
-      color: var(--muted);
+      margin-top: 10px;
       font-size: 1.05rem;
-      letter-spacing: 0.02em;
+      color: #888;
+      letter-spacing: 0.01em;
     }
 
+    /* ── Grid ── */
     main {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 56px 24px 80px;
+      padding: 48px 40px 80px;
       display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
       gap: 28px;
     }
 
+    /* ── Card ── */
     .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 32px;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background: #161616;
+      border: 1px solid #252525;
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s, transform 0.2s;
     }
 
     .card:hover {
-      border-color: #3a3a3a;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      border-color: #444;
+      transform: translateY(-2px);
     }
 
     .card-header {
@@ -77,88 +71,83 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 600;
+      color: #ffffff;
       letter-spacing: -0.01em;
-      color: #fff;
     }
 
     .card-date {
-      font-size: 0.8rem;
-      color: var(--muted);
+      font-size: 0.75rem;
+      color: #555;
       white-space: nowrap;
       padding-top: 3px;
       font-variant-numeric: tabular-nums;
     }
 
     .card-description {
-      color: #c0c0c0;
-      margin-bottom: 20px;
-      font-size: 0.93rem;
+      font-size: 0.88rem;
+      color: #aaa;
       line-height: 1.65;
     }
 
     .card-outcomes {
-      background: rgba(124, 107, 255, 0.07);
-      border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0;
-      padding: 12px 16px;
-      margin-bottom: 20px;
-      font-size: 0.88rem;
-      color: #d0ceff;
+      font-size: 0.85rem;
+      color: #c8c8c8;
       line-height: 1.6;
+      padding-left: 14px;
+      border-left: 2px solid #2a2a2a;
     }
 
+    /* ── Tag chips ── */
     .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
+      margin-top: 4px;
     }
 
     .tag {
-      background: var(--tag-bg);
-      border: 1px solid var(--tag-border);
-      border-radius: 6px;
-      padding: 3px 10px;
-      font-size: 0.76rem;
-      color: #aaa;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-      white-space: nowrap;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #1e1e1e;
+      border: 1px solid #2e2e2e;
+      color: #888;
     }
 
+    /* ── Footer ── */
     footer {
       text-align: center;
-      padding: 32px 24px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.82rem;
+      padding: 32px 40px;
+      font-size: 0.78rem;
+      color: #444;
+      border-top: 1px solid #1a1a1a;
     }
 
-    footer a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
-
-    @media (max-width: 600px) {
-      .card { padding: 22px 18px; }
-      header { padding: 48px 16px 36px; }
-      main { padding: 36px 16px 60px; }
-    }
-
+    /* ── Print ── */
     @media print {
       body { background: #fff; color: #111; }
-      .card { background: #fff; border-color: #ddd; box-shadow: none; }
-      .card-title { color: #111; }
-      .card-description { color: #333; }
-      .card-outcomes { background: #f5f3ff; border-color: #7c6bff; color: #333; }
-      .tag { background: #f0f0f0; border-color: #ccc; color: #444; }
-      header h1 { -webkit-text-fill-color: #111; background: none; color: #111; }
-      header p, .card-date, footer { color: #666; }
+      header { border-color: #ddd; }
+      header h1 { color: #000; }
+      header p { color: #555; }
+      .card { background: #fff; border-color: #ddd; break-inside: avoid; }
+      .card-title { color: #000; }
+      .card-description { color: #444; }
+      .card-outcomes { color: #222; border-color: #ccc; }
+      .tag { background: #f0f0f0; border-color: #ddd; color: #555; }
+      footer { color: #aaa; border-color: #eee; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      header, footer { padding-left: 20px; padding-right: 20px; }
+      main { padding: 32px 20px 60px; grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -171,13 +160,13 @@
 
 <main>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Claude AI From Josh</span>
-      <span class="card-date">February 2026</span>
+      <span class="card-date">Feb 2026</span>
     </div>
     <p class="card-description">A WAT-framework (Workflows, Agents, Tools) agent built for business outreach automation. Separates AI reasoning from deterministic execution — Claude orchestrates while Python scripts handle scraping, API calls, and data operations. Features email scraping (find local business leads from the web), outreach email drafting (reads a Google Sheet, creates Gmail drafts), ad-hoc email composing, and file organization.</p>
-    <div class="card-outcomes">End-to-end automated outreach pipeline — from finding leads to drafting personalized Gmail messages, all coordinated by Claude.</div>
+    <p class="card-outcomes">End-to-end automated outreach pipeline — from finding leads to drafting personalized Gmail messages, all coordinated by Claude.</p>
     <div class="tags">
       <span class="tag">Python</span>
       <span class="tag">Google Sheets API</span>
@@ -186,67 +175,64 @@
       <span class="tag">Claude Code</span>
       <span class="tag">WAT Architecture</span>
     </div>
-  </article>
+  </div>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Claude n8n Workflow Builder</span>
-      <span class="card-date">February 2026</span>
+      <span class="card-date">Feb 2026</span>
     </div>
     <p class="card-description">A specialized Claude Code environment for designing and deploying automation workflows in n8n Cloud. Uses the n8n-mcp MCP server for node discovery, validation, and live workflow management. Ships with 7 auto-activating skills covering JavaScript/Python code nodes, expression syntax, workflow architecture patterns, validation, and node configuration.</p>
-    <div class="card-outcomes">A production-grade n8n workflow builder with built-in validation, error handling standards, and an AI layer that understands n8n's full node library and expression syntax.</div>
+    <p class="card-outcomes">A production-grade n8n workflow builder with built-in validation, error handling standards, and an AI layer that understands n8n's full node library and expression syntax.</p>
     <div class="tags">
       <span class="tag">n8n Cloud</span>
-      <span class="tag">n8n-mcp MCP</span>
+      <span class="tag">n8n-mcp MCP Server</span>
       <span class="tag">Claude Code</span>
-      <span class="tag">Claude Skills</span>
       <span class="tag">JavaScript</span>
       <span class="tag">Python</span>
     </div>
-  </article>
+  </div>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Multimodal Embedding Pipeline</span>
-      <span class="card-date">March 2026</span>
+      <span class="card-date">Mar 2026</span>
     </div>
     <p class="card-description">A CLI tool for ingesting and semantically searching multimodal content — text files, images, and video. Walks a directory, generates Gemini embeddings for all supported file types (including video chunking for clips over 128s), and upserts them to a Pinecone vector index. Supports querying by text or image, with optional RAG using an OpenRouter LLM for natural language answers.</p>
-    <div class="card-outcomes">A single CLI command to build a searchable semantic index over any folder of mixed media — text, images, and video — with RAG-powered Q&amp;A on top.</div>
+    <p class="card-outcomes">A single CLI command to build a searchable semantic index over any folder of mixed media — text, images, and video — with RAG-powered Q&amp;A on top.</p>
     <div class="tags">
       <span class="tag">Python</span>
-      <span class="tag">Gemini Embeddings</span>
+      <span class="tag">Gemini API</span>
       <span class="tag">Pinecone</span>
-      <span class="tag">OpenRouter LLM</span>
+      <span class="tag">OpenRouter</span>
       <span class="tag">OpenCV</span>
       <span class="tag">FFmpeg</span>
-      <span class="tag">Click CLI</span>
     </div>
-  </article>
+  </div>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Claude Personal Assistant</span>
-      <span class="card-date">March 2026</span>
+      <span class="card-date">Mar 2026</span>
     </div>
     <p class="card-description">A personal automation hub built on Claude Code. Handles recurring personal tasks through a growing library of skills and Python tools. Current capabilities: automated cover letter generation (pulls jobs from Google Sheets, writes a tailored letter, exports to PDF), original design creation (canvas-design skill with a full font library), and skill authoring (skill-builder with a structured discovery interview).</p>
-    <div class="card-outcomes">A self-expanding personal assistant — each new skill permanently extends what Claude can do for Josh without re-explaining workflows.</div>
+    <p class="card-outcomes">A self-expanding personal assistant — each new skill permanently extends what Claude can do for Josh without re-explaining workflows.</p>
     <div class="tags">
       <span class="tag">Claude Code</span>
       <span class="tag">Claude Skills</span>
       <span class="tag">Python</span>
       <span class="tag">Google Sheets API</span>
       <span class="tag">ReportLab</span>
-      <span class="tag">PDF Generation</span>
     </div>
-  </article>
+  </div>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Gmail &amp; Telegram Personal Agent</span>
-      <span class="card-date">March 2026</span>
+      <span class="card-date">Mar 2026</span>
     </div>
-    <p class="card-description">A Trigger.dev automation project running two always-on pipelines. The email manager polls Gmail every minute via the History API, uses Claude to classify each new email into a custom label category (Car Stuff, Receipts, Tax Stuff, etc.), applies the label automatically, and sends a ≤50-word "Alfred Pennyworth"-style Telegram notification. The Telegram agent polls for incoming messages and lets Josh issue natural language commands — Claude uses tool calling to search Gmail, reply to threads verbatim, and create Google Calendar events, then confirms back over Telegram.</p>
-    <div class="card-outcomes">A 24/7 personal AI agent that auto-sorts every incoming email, surfaces concise summaries on your phone, and lets you delegate email replies and calendar bookings with a single Telegram message.</div>
+    <p class="card-description">A Trigger.dev automation project running two always-on pipelines. The email manager polls Gmail every minute via the History API, uses Claude to classify each new email into a custom label category, applies the label automatically, and sends a concise Telegram notification. The Telegram agent polls for incoming messages and lets Josh issue natural language commands — Claude uses tool calling to search Gmail, reply to threads, and create Google Calendar events.</p>
+    <p class="card-outcomes">A 24/7 personal AI agent that auto-sorts every incoming email, surfaces concise summaries on your phone, and lets you delegate email replies and calendar bookings with a single Telegram message.</p>
     <div class="tags">
       <span class="tag">TypeScript</span>
       <span class="tag">Trigger.dev</span>
@@ -255,31 +241,44 @@
       <span class="tag">Google Calendar API</span>
       <span class="tag">Telegram Bot API</span>
     </div>
-  </article>
+  </div>
 
-  <article class="card">
+  <div class="card">
     <div class="card-header">
       <span class="card-title">Claude Website Builder</span>
-      <span class="card-date">March 2026</span>
+      <span class="card-date">Mar 2026</span>
     </div>
-    <p class="card-description">An AI-powered website builder that produces native, ready-to-upload install packages for Shopify, WordPress/WooCommerce, BigCommerce, and Static HTML. Users build from scratch via a 7-round intake interview, or enhance an existing site from a URL or uploaded theme files. Features a Next.js UI with SSE progress streaming and 4 Claude skills (/build-website, /enhance-website, /preview-website, /export-website). The generation pipeline runs: Brief → Design System → Content → Parallel Platform Rendering → ZIP packaging.</p>
-    <div class="card-outcomes">A single tool that takes a brand brief and outputs production-ready theme ZIPs for 4 major platforms simultaneously — installable directly from each platform's admin dashboard.</div>
+    <p class="card-description">An AI-powered website builder that produces native, ready-to-upload install packages for Shopify, WordPress/WooCommerce, BigCommerce, and Static HTML. Users build from scratch via a 7-round intake interview, or enhance an existing site from a URL or uploaded theme files. Features a Next.js UI with SSE progress streaming and 4 Claude skills. The generation pipeline runs: Brief → Design System → Content → Parallel Platform Rendering → ZIP packaging.</p>
+    <p class="card-outcomes">A single tool that takes a brand brief and outputs production-ready theme ZIPs for 4 major platforms simultaneously — installable directly from each platform's admin dashboard.</p>
     <div class="tags">
       <span class="tag">TypeScript</span>
-      <span class="tag">Node.js</span>
       <span class="tag">Next.js</span>
       <span class="tag">Claude API</span>
       <span class="tag">Playwright</span>
       <span class="tag">Zod</span>
       <span class="tag">Claude Skills</span>
     </div>
-  </article>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Claude Website Asset Generator</span>
+      <span class="card-date">Mar 2026</span>
+    </div>
+    <p class="card-description">An AI-powered visual asset generator for websites. Given a plain-language brief and optional reference URLs or image files, it generates heroes, product images, page images, social/display banners, and seamless video loops using the Kie AI API. Features style locking — the first approved image becomes the visual anchor for all subsequent generations in a session, ensuring consistency. Ships with 6 Claude skills and integrates with the Claude Website Builder's brief format.</p>
+    <p class="card-outcomes">A single tool to go from brand brief to a full set of production-ready website visuals — heroes, product shots, banners, page images, and video loops — with visual consistency enforced across the entire session.</p>
+    <div class="tags">
+      <span class="tag">TypeScript</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">Kie AI API</span>
+      <span class="tag">Zod</span>
+      <span class="tag">Claude Skills</span>
+    </div>
+  </div>
 
 </main>
 
-<footer>
-  <p>Built with <a href="https://claude.ai/code" target="_blank">Claude Code</a></p>
-</footer>
+<footer>Built with <a href="https://claude.ai/code" style="color:#555;">Claude Code</a></footer>
 
 </body>
 </html>
